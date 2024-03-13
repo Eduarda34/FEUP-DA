@@ -15,14 +15,12 @@ using namespace std;
 class fileReader {
 
 private:
-    std::string filename;
+    std::ifstream file;
     std::string delimiter = ",";
 public:
-
-    fileReader();
-
-    readFile(const std::string& filename, const std::string& delimiter);
-
-    std::vector<std::vector<std::string>> getData();
-
+    fileReader(const std::string& filename, char delimiter);
+    void readCities();
+    void readPipes();
+    void readReservoirs();
+    void readStations();
 };

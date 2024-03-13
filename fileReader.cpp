@@ -7,8 +7,9 @@
 #include <iostream>
 #include <sstream>
 
-fileReader::fileReader() = default;
 
-void fileReader::readFile(const std::string &filename, const std::string &delimiter) {
 
+fileReader::fileReader(const int &filename, char delimiter)
+    : delimiter(delimiter) {
+    file_stream.open(filename);
 }
