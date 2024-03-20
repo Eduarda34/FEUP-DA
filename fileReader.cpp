@@ -8,8 +8,3 @@
 #include <sstream>
 
 
-
-fileReader::fileReader(const int &filename, char delimiter)
-    : delimiter(delimiter) {
-    file_stream.open(filename);
-}
