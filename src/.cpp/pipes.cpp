@@ -1,8 +1,4 @@
-//
-// Created by ricar on 13/03/2024.
-//
-
-#include "pipes.h"
+#include "src/.h/pipes.h"
 
 pipes::pipes(std::string spA, std::string spB, int capacity, bool direction)
     : spA(spA), spB(spB), capacity(capacity), direction(direction) {}

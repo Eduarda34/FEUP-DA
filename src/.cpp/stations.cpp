@@ -1,8 +1,4 @@
-//
-// Created by ricar on 13/03/2024.
-//
-
-#include "stations.h"
+#include "src/.h/stations.h"
 
 stations::stations(int id, std::string code)
     : id(id), code(code) {}

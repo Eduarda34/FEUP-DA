@@ -1,7 +1,3 @@
-//
-// Created by ricar on 13/03/2024.
-//
-
 #ifndef FEUP_DA_PIPES_H
 #define FEUP_DA_PIPES_H
 

@@ -1,8 +1,4 @@
-//
-// Created by ricar on 13/03/2024.
-//
-
-#include "cities.h"
+#include "src/.h/cities.h."
 
 cities::cities(std::string city, int id, std::string code, float demand, std::string population)
     : city(city), id(id), code(code), demand(demand), population(population) {}
