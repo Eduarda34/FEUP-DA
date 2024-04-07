@@ -14,5 +14,7 @@ int main() {
     }
 
     std::cout << g1->TotalFlow(g1);
+
+    g1->vertexRemovalFailures(g1, "PS_1");
     return 0;
 }

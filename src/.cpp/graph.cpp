@@ -90,7 +90,7 @@ void graph::edmondskarp(graph *g){
     while(findAugmentingPath(g, s, t)){
         double f= findminResidAlongPath(s, t);
         augmentFlowAlongPath(s,t,f);
-    }
+    }/*
     /*double sum=0;
     for(const auto e: getIncomingEdges(g, findVertex(target))){
         sum+=e->getFlow();

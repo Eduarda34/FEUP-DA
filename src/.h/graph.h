@@ -77,6 +77,7 @@ public:
     double getFlow(){return this->flow;}
     bool isSelected(){return this->selected;}
 
+    void setCapacity(double c){this->capacity=c;}
     void setSelected(bool s){
         this->selected=s;
     }
@@ -131,6 +132,7 @@ public:
         }
 
     }
+    void setEdgeSet(std::vector<edge*> es){this->edgeSet=es;}
 
     void addEdge(std::string source, std::string target, double capacity, bool direction){
         edge* e= new edge(source, target, capacity);
@@ -239,6 +241,66 @@ public:
         }
         return sum;
     }
+
+    void vertexRemovalFailures(graph* g1, std::string PScode){
+        vector<pair<std::string, double>> initial;
+        vector<pair<std::string, double>> final;
+        Data data1;
+
+        for (auto c: data1.getCities()){
+            initial.push_back(make_pair(c.getCode(), vertexMaxFlow(g1, c.getCode())));
+        }
+
+        vector<edge*> abc;
+        for (auto e: g1->getEdgeSet()){
+            if (e->getSourceVertexCode()==PScode){
+                e->setCapacity(0);
+            }
+            abc.push_back(e);
+        }
+        g1->setEdgeSet(abc);
+        edmondskarp(g1);
+
+        for (auto c: data1.getCities()){
+            final.push_back(make_pair(c.getCode(), vertexMaxFlow(g1, c.getCode())));
+        }
+
+        for (int i=0; i<initial.size(); i++){
+            if (initial[i].second!=final[i].second){
+                std::cout << initial[i].first << "  |   " << initial[i].second << "  |   " << final[i].second << std::endl;
+            }
+        }
+        //graph* g2=new graph;
+
+        vector<edge*> temp;
+
+        for (auto r: data1.getReservoirs()){
+            edge* e= new edge("SOURCE", r.getCode(), r.getMaxDel());
+            temp.push_back(e);
+        }
+
+        for (auto c:data1.getCities()){
+            edge* e= new edge(c.getCode(), "SINK", c.getDemand());
+            temp.push_back(e);
+        }
+
+        //Edges
+        for (auto p:data1.getPipes()) {
+            edge* e = new edge(p.getSpA(), p.getSpB(), p.getCapacity());
+            temp.push_back(e);
+            if (p.getDirection() == 0) {
+                edge* e2 = new edge(p.getSpB(), p.getSpA(), p.getCapacity());
+                temp.push_back(e2);
+            }
+        }
+
+        g1->setEdgeSet(temp);
+        edmondskarp(g1);
+        cout << vertexMaxFlow(g1, "C_1");
+
+    }
+
+    void pipelineRemovalFailures(){}
 };
 
 
