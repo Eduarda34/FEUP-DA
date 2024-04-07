@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['getcapacity_0',['getCapacity',['../classpipes.html#a79e3b50dea0a9f322065bc85672116c9',1,'pipes']]],
+  ['getcities_1',['getCities',['../class_data.html#a85eb663823d1aa9a78c10c9960840078',1,'Data']]],
+  ['getcity_2',['getCity',['../classcities.html#ad3222cd77d89a8bcb27145d24ec06719',1,'cities']]],
+  ['getcode_3',['getCode',['../classcities.html#a87e4d456d2ce50d12b5bfe59be043f8d',1,'cities::getCode()'],['../classvertex.html#a74467dba1d5db73efe1ffdea2ebdef39',1,'vertex::getCode()'],['../classreservoirs.html#a602695f91416b8930c640806a3551ea1',1,'reservoirs::getCode()'],['../classstations.html#ae606d4009f096341fa82169ce868901d',1,'stations::getCode()']]],
+  ['getdemand_4',['getDemand',['../classcities.html#a86f4b233b49d57c295690a7113089cc0',1,'cities']]],
+  ['getdirection_5',['getDirection',['../classpipes.html#a8ad495413b61db369d791e479881c5bf',1,'pipes']]],
+  ['getid_6',['getId',['../classcities.html#a57193eb6a7a7cbb683ec96e3c72c22e1',1,'cities::getId()'],['../classreservoirs.html#a07ec9f41ed8a9bb3289c55e343128856',1,'reservoirs::getId()'],['../classstations.html#a2d867f4c43c8a198d3bcebdec2044065',1,'stations::getId()']]],
+  ['getmaxdel_7',['getMaxDel',['../classreservoirs.html#abd73611e89bdf380ffbb9eb3564dd0d2',1,'reservoirs']]],
+  ['getmunicipality_8',['getMunicipality',['../classreservoirs.html#a93e471ba13c095f797803962a8d62fb2',1,'reservoirs']]],
+  ['getname_9',['getName',['../classreservoirs.html#af630e0ff1888f745d47d3fb1d300d448',1,'reservoirs']]],
+  ['getoutgoingedges_10',['getOutgoingEdges',['../classgraph.html#a02e0059a033da42c25b044e7f841820e',1,'graph']]],
+  ['getpipes_11',['getPipes',['../class_data.html#a3d116b5b038bafe8f12badb193121978',1,'Data']]],
+  ['getpopulation_12',['getPopulation',['../classcities.html#ad0664842c48050bf9423210da43ca5f5',1,'cities']]],
+  ['getreservoirs_13',['getReservoirs',['../class_data.html#ad7470061e9cee84feb49d96bc2c16946',1,'Data']]],
+  ['getspa_14',['getSpA',['../classpipes.html#a94f63c49999c614daf17287e00beab76',1,'pipes']]],
+  ['getspb_15',['getSpB',['../classpipes.html#a8661ea2dd46ed54f623d33a9b36537a7',1,'pipes']]],
+  ['getstations_16',['getStations',['../class_data.html#aab11b2faa8240fc7f6030d95ece399a8',1,'Data']]]
+];
