@@ -9,6 +9,5 @@ class Menu {
 public:
 
     Menu();
-
     static void start();
 };

@@ -13,7 +13,15 @@ class stations {
 public:
 
     stations(int id, std::string code);
+
+    /**
+     * @return id
+     */
     int getId();
+
+    /**
+     * @return code
+     */
     std::string getCode();
 
 };

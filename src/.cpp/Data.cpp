@@ -29,12 +29,15 @@ Data::Data(){
 vector<cities> Data::getCities(){
     return this->Cities;
 }
+
 vector<pipes> Data::getPipes(){
     return this->Pipes;
 }
+
 vector<reservoirs> Data::getReservoirs(){
     return this->Reservoirs;
 }
+
 vector<stations> Data::getStations(){
     return this->Stations;
 }

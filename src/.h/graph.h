@@ -24,13 +24,21 @@ public:
         visited=false;
     }
 
+    /**
+     * @return code
+     */
     std::string getCode(){return this->code;}
     bool isVisited(){return this->visited;}
     double getDist(){return this->dist;}
 
+    /**
+     *
+     * @param v
+     */
     void setVisited(bool v){
         this->visited=v;
     }
+
     void setDist(double dist){
         this->dist=dist;
     }
@@ -54,6 +62,8 @@ private:
     double flow;
     bool selected;
 public:
+
+
     edge(std::string source, std::string target, double capacity){
         this->sourceVertexCode=source;
         this->targetVertexCode=target;
@@ -138,6 +148,11 @@ public:
         }
     }
 
+    /**
+     * @brief Useful for searching for a specific vertex in a graph using its code as a unique identifier
+     * @param c
+     * @return nullptr if no vertices are found after traversing the entire set of vertices
+     */
     vertex* findVertex(std::string c) const{
         for (vertex* v : vertexSet){
             if (v->getCode() == c){
@@ -156,6 +171,14 @@ public:
         }
         return result;
     }
+
+    /**
+     * @brief useful for obtaining all outgoing edges of a specific vertex in a graph facilitating the
+     * analysis of the vertex's connectivity with other vertices
+     * @param g
+     * @param v
+     * @return result that contains pointers to all edges leaving vertex v
+     */
     std::vector<edge*> getOutgoingEdges(graph *g, vertex *v){
         std::vector<edge*> result;
         for (auto e: edgeSet){
@@ -174,8 +197,21 @@ public:
     bool findAugmentingPath(graph *g, vertex *s, vertex *t);
     double findminResidAlongPath(vertex *s, vertex *t);
     void augmentFlowAlongPath(vertex *s, vertex *t, double f);
+
+    /**
+     * @brief Implements the Edmonds-Karp algorithm to find the maximum flow in
+     * a flow network, updating the edge flows until there are no more increasing paths in the graph
+     * @param g
+     */
     void edmondskarp(graph *g);
 
+    /**
+     * @brief Uses the Edmonds-Karp algorithm to calculate the maximum flow int the flow network and then
+     * calculates the maximum flow flowing to the specified vertex
+     * @param g
+     * @param target
+     * @return sum that represents the maximum flow flowing to the specified destination vertex
+     */
     double vertexMaxFlow(graph *g, std::string target){
         edmondskarp(g);
         vertex* t= findVertex(target);
@@ -188,6 +224,12 @@ public:
         return sum;
     }
 
+    /**
+     * @brief Uses the vertexMaxFlow() to calculate the maximum flow in each city and then calculates
+     * the total flow in all cities by adding que maximum flows in each city
+     * @param g
+     * @return sum that represents the total flow across all cities
+     */
     double TotalFlow(graph *g){
         double sum=0;
         Data data1;
