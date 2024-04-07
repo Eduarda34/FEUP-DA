@@ -242,6 +242,16 @@ public:
         return sum;
     }
 
+    void DemandvsFlow(graph* g){
+        Data data1;
+        for (auto c:data1.getCities()){
+            if (vertexMaxFlow(g, c.getCode()) != c.getDemand()){
+                cout << c.getCode() << "    |   " << c.getCity() << "   |   " << c.getDemand() << "    |   " <<
+                     vertexMaxFlow(g, c.getCode()) << "  |   " << (c.getDemand()-vertexMaxFlow(g, c.getCode()));
+            }
+        }
+    }
+
     void vertexRemovalFailures(graph* g1, std::string PScode){
         vector<pair<std::string, double>> initial;
         vector<pair<std::string, double>> final;
