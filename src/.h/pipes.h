@@ -9,15 +9,15 @@ class pipes {
 
     std::string spA;
     std::string spB;
-    int capacity;
+    double capacity;
     bool direction;
 
 public:
 
-    pipes(std::string spA, std::string spB, int capacity, bool direction);
+    pipes(std::string spA, std::string spB, double capacity, bool direction);
     std::string getSpA();
     std::string getSpB();
-    int getCapacity();
+    double getCapacity();
     bool getDirection();
 
 };

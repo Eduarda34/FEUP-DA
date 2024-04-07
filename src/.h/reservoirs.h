@@ -11,16 +11,16 @@ class reservoirs {
     std::string municipality;
     int id;
     std::string code;
-    int maxDelivery;
+    double maxDelivery;
 
 public:
 
-    reservoirs(std::string name, std::string municipality, int id, std::string code, int maxDelivery);
+    reservoirs(std::string name, std::string municipality, int id, std::string code, double maxDelivery);
     std::string getName();
     std::string getMunicipality();
     int getId();
     std::string getCode();
-    int getMaxDel();
+    double getMaxDel();
 
 };
 

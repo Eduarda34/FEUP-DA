@@ -15,4 +15,6 @@ add_executable(DA_project1 src/.cpp/main.cpp
         src/.cpp/reservoirs.cpp
         src/.h/reservoirs.h
         src/.cpp/stations.cpp
-        src/.h/stations.h)
+        src/.h/stations.h
+        src/.h/graph.h
+        src/.cpp/graph.cpp)

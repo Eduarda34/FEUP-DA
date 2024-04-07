@@ -10,16 +10,16 @@ class cities {
     std::string city;
     int id;
     std::string code;
-    float demand;
+    double demand;
     std::string population;
 
 public:
 
-    cities(std::string city, int id, std::string code, float demand, std::string population);
+    cities(std::string city, int id, std::string code, double demand, std::string population);
     std::string getCity();
     int getId();
     std::string getCode();
-    float getDemand();
+    double getDemand();
     std::string getPopulation();
 
 };
