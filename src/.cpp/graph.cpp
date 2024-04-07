@@ -72,9 +72,9 @@ void graph::augmentFlowAlongPath(vertex *s, vertex *t, double f){
     }
 }
 
-double graph::edmondskarp(graph *g, std::string source, std::string target){
-    vertex* s = g->findVertex(source);
-    vertex* t = g->findVertex(target);
+void graph::edmondskarp(graph *g){
+    vertex* s = g->findVertex("SOURCE");
+    vertex* t = g->findVertex("SINK");
     double f;
 
     if ( s==nullptr || t==nullptr || s==t){
@@ -91,9 +91,9 @@ double graph::edmondskarp(graph *g, std::string source, std::string target){
         double f= findminResidAlongPath(s, t);
         augmentFlowAlongPath(s,t,f);
     }
-    double sum=0;
-    for(const auto e: getIncomingEdges(g, t)){
+    /*double sum=0;
+    for(const auto e: getIncomingEdges(g, findVertex(target))){
         sum+=e->getFlow();
     }
-    return sum;
+    return sum;*/
 }

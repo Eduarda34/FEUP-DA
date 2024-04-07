@@ -84,9 +84,19 @@ private:
 public:
     graph(){
         Data data;
+        //Vertex
+
+        //Source -> vertex source code= "SOURCE"
+        vertex* Source = new vertex("SOURCE");
+        vertex* Sink=new vertex("SINK");
+        vertexSet.push_back(Source);
+        vertexSet.push_back(Sink);
+
         for (auto r: data.getReservoirs()){
             vertex* v = new vertex(r.getCode());
             vertexSet.push_back(v);
+            edge* e= new edge("SOURCE", r.getCode(), r.getMaxDel());
+            edgeSet.push_back(e);
         }
         for (auto s:data.getStations()){
             vertex* v = new vertex(s.getCode());
@@ -95,7 +105,12 @@ public:
         for (auto c:data.getCities()){
             vertex* v = new vertex(c.getCode());
             vertexSet.push_back(v);
+
+            edge* e= new edge(c.getCode(), "SINK", c.getDemand());
+            edgeSet.push_back(e);
         }
+
+        //Edges
         for (auto p:data.getPipes()) {
             edge* e = new edge(p.getSpA(), p.getSpB(), p.getCapacity());
             edgeSet.push_back(e);
@@ -104,6 +119,7 @@ public:
                 edgeSet.push_back(e2);
             }
         }
+
     }
 
     void addEdge(std::string source, std::string target, double capacity, bool direction){
@@ -158,8 +174,29 @@ public:
     bool findAugmentingPath(graph *g, vertex *s, vertex *t);
     double findminResidAlongPath(vertex *s, vertex *t);
     void augmentFlowAlongPath(vertex *s, vertex *t, double f);
-    double edmondskarp(graph *g, std::string source, std::string target);
+    void edmondskarp(graph *g);
 
+    double vertexMaxFlow(graph *g, std::string target){
+        edmondskarp(g);
+        vertex* t= findVertex(target);
+        double sum=0;
+        for(const auto e: getOutgoingEdges(g, findVertex(target))){
+            if (e->getTargetVertexCode()=="SINK") {
+                sum += e->getFlow();
+            }
+        }
+        return sum;
+    }
+
+    double TotalFlow(graph *g){
+        double sum=0;
+        Data data1;
+        vector<cities> Cidades = data1.getCities();
+        for (auto c:Cidades){
+            sum+= vertexMaxFlow(g, c.getCode());
+        }
+        return sum;
+    }
 };
 
 

@@ -7,10 +7,12 @@
 #include "../.h/graph.h"
 
 int main() {
+    Data data1;
     graph* g1 = new graph();
-    for (auto v : g1->getVertexSet()){
-        std::cout << v->getCode()<<endl<<endl;
+    for (auto c : data1.getCities()){
+        std::cout << c.getCity() << "       " << g1->vertexMaxFlow(g1, c.getCode())<< std::endl;
     }
-    std::cout << g1->edmondskarp(g1, "R_1", "C_1");
+
+    std::cout << g1->TotalFlow(g1);
     return 0;
 }
