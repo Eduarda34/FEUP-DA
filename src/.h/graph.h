@@ -8,7 +8,11 @@
 #include <string>
 #include <vector>
 #include <queue>
+#include <limits>
+#include <algorithm>
 #include "Data.h"
+
+#define INF std::numeric_limits<double>::max()
 
 class edge;
 
@@ -240,6 +244,31 @@ public:
             sum+= vertexMaxFlow(g, c.getCode());
         }
         return sum;
+    }
+
+    void metricsAnalysis(graph* g){
+        edmondskarp(g);
+        double sumDiff = 0;
+        double maxDiff = -INF;
+
+        for (auto e: g->getEdgeSet()){
+            double diff=e->getCapacity()-e->getFlow();
+            sumDiff+=diff;
+            maxDiff=max(maxDiff, diff);
+        }
+
+        double avgDiff=sumDiff/(g->getEdgeSet().size());
+
+        double sumSqDiff=0;
+        for (auto e:g->getEdgeSet()){
+            double diff=e->getCapacity()-e->getFlow();
+            sumSqDiff+=(diff-avgDiff)*(diff-avgDiff);
+        }
+        double variance = sumSqDiff/(g->getEdgeSet().size());
+
+        cout << "Average Difference: " << avgDiff << endl;
+        cout << "Variance: " << variance << endl;
+        cout << "Max Difference: " << maxDiff << endl;
     }
 
     void DemandvsFlow(graph* g){
