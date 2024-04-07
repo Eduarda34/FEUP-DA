@@ -335,11 +335,9 @@ public:
 
         g1->setEdgeSet(temp);
         edmondskarp(g1);
-        cout << vertexMaxFlow(g1, "C_1");
-
     }
 
-    void pipelineRemovalFailures(graph* g1, vector<pair<std::string, std::string>> pipelinestoremove){
+    void pipelineRemovalFailures(graph* g1, pair<std::string, std::string> pipelinestoremove){
         vector<pair<std::string, double>> initial;
         vector<pair<std::string, double>> final;
         Data data1;
@@ -350,11 +348,9 @@ public:
 
         vector<edge*> newedgeset;
         for (auto e: g1->getEdgeSet()){
-            for (auto vp : pipelinestoremove){
-                if ((vp.first==e->getSourceVertexCode() && vp.second==e->getTargetVertexCode())
-                    or (vp.second==e->getSourceVertexCode() && vp.first==e->getTargetVertexCode())){
-                    e->setCapacity(0);
-                }
+            if ((pipelinestoremove.first==e->getSourceVertexCode() && pipelinestoremove.second==e->getTargetVertexCode())
+                or (pipelinestoremove.second==e->getSourceVertexCode() && pipelinestoremove.first==e->getTargetVertexCode())){
+                e->setCapacity(0);
             }
             newedgeset.push_back(e);
         }

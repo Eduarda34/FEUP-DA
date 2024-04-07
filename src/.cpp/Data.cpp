@@ -46,7 +46,7 @@ vector<stations> Data::getStations(){
 //Readers
 void Data::readCities(){
     ifstream file;
-    file.open("../dataset/Project1DataSetSmall/Cities_Madeira.csv"); // Adjust file path here
+    file.open("../dataset/Project1LargeDataSet/Cities.csv"); // Adjust file path here
     string line;
 
     if (!file.is_open()) {
@@ -100,7 +100,7 @@ void Data::readCities(){
 
 void Data::readPipes(){
     ifstream file;
-    file.open("../dataset/Project1DataSetSmall/Pipes_Madeira.csv"); // Adjust file path here
+    file.open("../dataset/Project1LargeDataSet/Pipes.csv"); // Adjust file path here
     string line;
 
     if (!file.is_open()) {
@@ -153,7 +153,7 @@ void Data::readPipes(){
 
 void Data::readReservoirs(){
     ifstream file;
-    file.open("../dataset/Project1DataSetSmall/Reservoirs_Madeira.csv"); // Adjust file path here
+    file.open("../dataset/Project1LargeDataSet/Reservoir.csv"); // Adjust file path here
     string line;
 
     if (!file.is_open()) {
@@ -209,7 +209,7 @@ void Data::readReservoirs(){
 
 void Data::readStations(){
     ifstream file;
-    file.open("../dataset/Project1DataSetSmall/Stations_Madeira.csv"); // Adjust file path here
+    file.open("../dataset/Project1LargeDataSet/Stations.csv"); // Adjust file path here
     string line;
 
     if (!file.is_open()) {
