@@ -335,8 +335,6 @@ public:
 
         g1->setEdgeSet(temp);
         edmondskarp(g1);
-        cout << vertexMaxFlow(g1, "C_1");
-
     }
 
     void pipelineRemovalFailures(graph* g1, pair<std::string, std::string> pipelinestoremove){
