@@ -66,8 +66,13 @@ private:
     double flow;
     bool selected;
 public:
-
-
+    /**
+     * @brief constructor used to initialize an edge object with specific values for
+     * source, destination and capacity, and sets selected to 'false'
+     * @param source
+     * @param target
+     * @param capacity
+     */
     edge(std::string source, std::string target, double capacity){
         this->sourceVertexCode=source;
         this->targetVertexCode=target;
@@ -75,12 +80,32 @@ public:
         selected=false;
     }
 
+    /**
+     * @return constante reference to the source vertex code associated with this edge
+     */
     const std::string& getSourceVertexCode() const{return sourceVertexCode;}
+
+    /**
+     *
+     * @return constant reference to the target vertex code
+     */
     const std::string& getTargetVertexCode(){return targetVertexCode;}
+
+    /**
+     * @return capacity
+     */
     double getCapacity(){return this->capacity;}
+
+    /**
+     * @return flow
+     */
     double getFlow(){return this->flow;}
     bool isSelected(){return this->selected;}
 
+    /**
+     * @brief updates the capacity value associated with that edge with the new value c
+     * @param c
+     */
     void setCapacity(double c){this->capacity=c;}
     void setSelected(bool s){
         this->selected=s;
@@ -89,7 +114,6 @@ public:
         this->flow=f;
     }
 };
-
 
 
 class graph {
@@ -136,6 +160,11 @@ public:
         }
 
     }
+
+    /**
+     * @brief sets the set of edges associated with this object to the given new set of edges
+     * @param es
+     */
     void setEdgeSet(std::vector<edge*> es){this->edgeSet=es;}
 
     void addEdge(std::string source, std::string target, double capacity, bool direction){
@@ -168,6 +197,12 @@ public:
         return nullptr;
     }
 
+    /**
+     *
+     * @param g
+     * @param v
+     * @return vector of pointers to all edges that are directed to vertex 'v' in this graph
+     */
     std::vector<edge*> getIncomingEdges(graph *g, vertex *v){
         std::vector<edge*> result;
         for (auto e: edgeSet){
@@ -196,6 +231,10 @@ public:
     }
 
     std::vector<vertex*> getVertexSet(){return vertexSet;}
+
+    /**
+     * @return vector of pointers to all edges of this graph
+     */
     std::vector<edge*> getEdgeSet(){return edgeSet;}
 
     //for Edmonds Karp Algorithm

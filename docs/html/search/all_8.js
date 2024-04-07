@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setvisited_0',['setVisited',['../classvertex.html#a9eaecf9d3dc55b0a9dc10f72b6e0b13b',1,'vertex']]],
-  ['stations_1',['stations',['../classstations.html',1,'']]]
+  ['totalflow_0',['TotalFlow',['../classgraph.html#ada0828544f06e93074c490b1079610a5',1,'graph']]]
 ];

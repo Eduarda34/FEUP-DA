@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['totalflow_0',['TotalFlow',['../classgraph.html#ada0828544f06e93074c490b1079610a5',1,'graph']]]
+  ['vertex_0',['vertex',['../classvertex.html',1,'']]],
+  ['vertexmaxflow_1',['vertexMaxFlow',['../classgraph.html#a56c3b00d5d5e5ff5d84dfd34cfdb42a5',1,'graph']]]
 ];
