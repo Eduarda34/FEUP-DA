@@ -1,0 +1,276 @@
+\hypertarget{graph_8h_source}{}\doxysection{graph.\+h}
+\label{graph_8h_source}\index{C:/Users/LENOVO/OneDrive/Ambiente de Trabalho/FEUP/23-\/24/DA/Projeto 1/src/.h/graph.h@{C:/Users/LENOVO/OneDrive/Ambiente de Trabalho/FEUP/23-\/24/DA/Projeto 1/src/.h/graph.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by Tomás Rodrigues on 07/04/2024.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef DA\_PROJECT1\_GRAPH\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define DA\_PROJECT1\_GRAPH\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}Data.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{classedge}{edge}};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classvertex}{vertex}} \{}
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     std::string code;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{bool} visited;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{double} dist=0;}
+\DoxyCodeLine{20     \mbox{\hyperlink{classedge}{edge}} *path= \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{classvertex}{vertex}}(std::string code)\{}
+\DoxyCodeLine{23         this-\/>code=code;}
+\DoxyCodeLine{24         visited=\textcolor{keyword}{false};}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{30     std::string \mbox{\hyperlink{classvertex_a74467dba1d5db73efe1ffdea2ebdef39}{getCode}}()\{\textcolor{keywordflow}{return} this-\/>code;\}}
+\DoxyCodeLine{31     \textcolor{keywordtype}{bool} isVisited()\{\textcolor{keywordflow}{return} this-\/>visited;\}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{double} getDist()\{\textcolor{keywordflow}{return} this-\/>dist;\}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{classvertex_a9eaecf9d3dc55b0a9dc10f72b6e0b13b}{setVisited}}(\textcolor{keywordtype}{bool} v)\{}
+\DoxyCodeLine{39         this-\/>visited=v;}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} setDist(\textcolor{keywordtype}{double} dist)\{}
+\DoxyCodeLine{43         this-\/>dist=dist;}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \mbox{\hyperlink{classedge}{edge}} *getPath()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{47         \textcolor{keywordflow}{return} this-\/>path;}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} setPath(\mbox{\hyperlink{classedge}{edge}} *path)\{}
+\DoxyCodeLine{51         this-\/>path=path;}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{class }\mbox{\hyperlink{classedge}{edge}} \{}
+\DoxyCodeLine{58 \textcolor{keyword}{private}:}
+\DoxyCodeLine{59     std::string sourceVertexCode;}
+\DoxyCodeLine{60     std::string targetVertexCode;}
+\DoxyCodeLine{61     \textcolor{keywordtype}{double} capacity;}
+\DoxyCodeLine{62     \textcolor{keywordtype}{double} flow;}
+\DoxyCodeLine{63     \textcolor{keywordtype}{bool} selected;}
+\DoxyCodeLine{64 \textcolor{keyword}{public}:}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \mbox{\hyperlink{classedge}{edge}}(std::string source, std::string target, \textcolor{keywordtype}{double} capacity)\{}
+\DoxyCodeLine{68         this-\/>sourceVertexCode=source;}
+\DoxyCodeLine{69         this-\/>targetVertexCode=target;}
+\DoxyCodeLine{70         this-\/>capacity=capacity;}
+\DoxyCodeLine{71         selected=\textcolor{keyword}{false};}
+\DoxyCodeLine{72     \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keyword}{const} std::string\& getSourceVertexCode()\textcolor{keyword}{ const}\{\textcolor{keywordflow}{return} sourceVertexCode;\}}
+\DoxyCodeLine{75     \textcolor{keyword}{const} std::string\& getTargetVertexCode()\{\textcolor{keywordflow}{return} targetVertexCode;\}}
+\DoxyCodeLine{76     \textcolor{keywordtype}{double} getCapacity()\{\textcolor{keywordflow}{return} this-\/>capacity;\}}
+\DoxyCodeLine{77     \textcolor{keywordtype}{double} getFlow()\{\textcolor{keywordflow}{return} this-\/>flow;\}}
+\DoxyCodeLine{78     \textcolor{keywordtype}{bool} isSelected()\{\textcolor{keywordflow}{return} this-\/>selected;\}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{keywordtype}{void} setCapacity(\textcolor{keywordtype}{double} c)\{this-\/>capacity=c;\}}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} setSelected(\textcolor{keywordtype}{bool} s)\{}
+\DoxyCodeLine{82         this-\/>selected=s;}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84     \textcolor{keywordtype}{void} setFlow(\textcolor{keywordtype}{double} f)\{}
+\DoxyCodeLine{85         this-\/>flow=f;}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87 \};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keyword}{class }\mbox{\hyperlink{classgraph}{graph}} \{}
+\DoxyCodeLine{92 \textcolor{keyword}{private}:}
+\DoxyCodeLine{93     std::vector<vertex*> vertexSet;}
+\DoxyCodeLine{94     std::vector<edge*> edgeSet;}
+\DoxyCodeLine{95 \textcolor{keyword}{public}:}
+\DoxyCodeLine{96     \mbox{\hyperlink{classgraph}{graph}}()\{}
+\DoxyCodeLine{97         \mbox{\hyperlink{class_data}{Data}} data;}
+\DoxyCodeLine{98         \textcolor{comment}{//Vertex}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100         \textcolor{comment}{//Source -\/> vertex source code= "{}SOURCE"{}}}
+\DoxyCodeLine{101         \mbox{\hyperlink{classvertex}{vertex}}* Source = \textcolor{keyword}{new} \mbox{\hyperlink{classvertex}{vertex}}(\textcolor{stringliteral}{"{}SOURCE"{}});}
+\DoxyCodeLine{102         \mbox{\hyperlink{classvertex}{vertex}}* Sink=\textcolor{keyword}{new} \mbox{\hyperlink{classvertex}{vertex}}(\textcolor{stringliteral}{"{}SINK"{}});}
+\DoxyCodeLine{103         vertexSet.push\_back(Source);}
+\DoxyCodeLine{104         vertexSet.push\_back(Sink);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} r: data.\mbox{\hyperlink{class_data_ad7470061e9cee84feb49d96bc2c16946}{getReservoirs}}())\{}
+\DoxyCodeLine{107             \mbox{\hyperlink{classvertex}{vertex}}* v = \textcolor{keyword}{new} \mbox{\hyperlink{classvertex}{vertex}}(r.getCode());}
+\DoxyCodeLine{108             vertexSet.push\_back(v);}
+\DoxyCodeLine{109             \mbox{\hyperlink{classedge}{edge}}* e= \textcolor{keyword}{new} \mbox{\hyperlink{classedge}{edge}}(\textcolor{stringliteral}{"{}SOURCE"{}}, r.getCode(), r.getMaxDel());}
+\DoxyCodeLine{110             edgeSet.push\_back(e);}
+\DoxyCodeLine{111         \}}
+\DoxyCodeLine{112         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} s:data.\mbox{\hyperlink{class_data_aab11b2faa8240fc7f6030d95ece399a8}{getStations}}())\{}
+\DoxyCodeLine{113             \mbox{\hyperlink{classvertex}{vertex}}* v = \textcolor{keyword}{new} \mbox{\hyperlink{classvertex}{vertex}}(s.getCode());}
+\DoxyCodeLine{114             vertexSet.push\_back(v);}
+\DoxyCodeLine{115         \}}
+\DoxyCodeLine{116         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} c:data.\mbox{\hyperlink{class_data_a85eb663823d1aa9a78c10c9960840078}{getCities}}())\{}
+\DoxyCodeLine{117             \mbox{\hyperlink{classvertex}{vertex}}* v = \textcolor{keyword}{new} \mbox{\hyperlink{classvertex}{vertex}}(c.getCode());}
+\DoxyCodeLine{118             vertexSet.push\_back(v);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120             \mbox{\hyperlink{classedge}{edge}}* e= \textcolor{keyword}{new} \mbox{\hyperlink{classedge}{edge}}(c.getCode(), \textcolor{stringliteral}{"{}SINK"{}}, c.getDemand());}
+\DoxyCodeLine{121             edgeSet.push\_back(e);}
+\DoxyCodeLine{122         \}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124         \textcolor{comment}{//Edges}}
+\DoxyCodeLine{125         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} p:data.\mbox{\hyperlink{class_data_a3d116b5b038bafe8f12badb193121978}{getPipes}}()) \{}
+\DoxyCodeLine{126             \mbox{\hyperlink{classedge}{edge}}* e = \textcolor{keyword}{new} \mbox{\hyperlink{classedge}{edge}}(p.getSpA(), p.getSpB(), p.getCapacity());}
+\DoxyCodeLine{127             edgeSet.push\_back(e);}
+\DoxyCodeLine{128             \textcolor{keywordflow}{if} (p.getDirection() == 0) \{}
+\DoxyCodeLine{129                 \mbox{\hyperlink{classedge}{edge}}* e2 = \textcolor{keyword}{new} \mbox{\hyperlink{classedge}{edge}}(p.getSpB(), p.getSpA(), p.getCapacity());}
+\DoxyCodeLine{130                 edgeSet.push\_back(e2);}
+\DoxyCodeLine{131             \}}
+\DoxyCodeLine{132         \}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \}}
+\DoxyCodeLine{135     \textcolor{keywordtype}{void} setEdgeSet(std::vector<edge*> es)\{this-\/>edgeSet=es;\}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{keywordtype}{void} addEdge(std::string source, std::string target, \textcolor{keywordtype}{double} capacity, \textcolor{keywordtype}{bool} direction)\{}
+\DoxyCodeLine{138         \mbox{\hyperlink{classedge}{edge}}* e= \textcolor{keyword}{new} \mbox{\hyperlink{classedge}{edge}}(source, target, capacity);}
+\DoxyCodeLine{139         edgeSet.push\_back(e);}
+\DoxyCodeLine{140         \textcolor{keywordflow}{if} (direction==0)\{}
+\DoxyCodeLine{141             \mbox{\hyperlink{classedge}{edge}}* e2= \textcolor{keyword}{new} \mbox{\hyperlink{classedge}{edge}}(target, source, capacity);}
+\DoxyCodeLine{142             edgeSet.push\_back(e2);}
+\DoxyCodeLine{143         \}}
+\DoxyCodeLine{144     \}}
+\DoxyCodeLine{145     \textcolor{keywordtype}{bool} removeEdge(\mbox{\hyperlink{classedge}{edge}} e)\{}
+\DoxyCodeLine{146         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<edgeSet.size(); i++)\{}
+\DoxyCodeLine{147             \textcolor{keywordflow}{if} (edgeSet[i]-\/>getSourceVertexCode() == e.getSourceVertexCode() \&\& edgeSet[i]-\/>getTargetVertexCode() == e.getTargetVertexCode() \&\& edgeSet[i]-\/>getCapacity()==e.getCapacity())\{}
+\DoxyCodeLine{148                 edgeSet.erase(edgeSet.begin()+i);}
+\DoxyCodeLine{149             \}}
+\DoxyCodeLine{150         \}}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{158     \mbox{\hyperlink{classvertex}{vertex}}* \mbox{\hyperlink{classgraph_ab4e0c89e0137fe7685ea066194ff27b0}{findVertex}}(std::string c)\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{159         \textcolor{keywordflow}{for} (\mbox{\hyperlink{classvertex}{vertex}}* v : vertexSet)\{}
+\DoxyCodeLine{160             \textcolor{keywordflow}{if} (v-\/>getCode() == c)\{}
+\DoxyCodeLine{161                 \textcolor{keywordflow}{return} v;}
+\DoxyCodeLine{162             \}}
+\DoxyCodeLine{163         \}}
+\DoxyCodeLine{164         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{165     \}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     std::vector<edge*> getIncomingEdges(\mbox{\hyperlink{classgraph}{graph}} *g, \mbox{\hyperlink{classvertex}{vertex}} *v)\{}
+\DoxyCodeLine{168         std::vector<edge*> result;}
+\DoxyCodeLine{169         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e: edgeSet)\{}
+\DoxyCodeLine{170             \textcolor{keywordflow}{if} (e-\/>getTargetVertexCode()==v-\/>\mbox{\hyperlink{classvertex_a74467dba1d5db73efe1ffdea2ebdef39}{getCode}}())\{}
+\DoxyCodeLine{171                 result.push\_back(e);}
+\DoxyCodeLine{172             \}}
+\DoxyCodeLine{173         \}}
+\DoxyCodeLine{174         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{175     \}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{184     std::vector<edge*> \mbox{\hyperlink{classgraph_a02e0059a033da42c25b044e7f841820e}{getOutgoingEdges}}(\mbox{\hyperlink{classgraph}{graph}} *g, \mbox{\hyperlink{classvertex}{vertex}} *v)\{}
+\DoxyCodeLine{185         std::vector<edge*> result;}
+\DoxyCodeLine{186         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e: edgeSet)\{}
+\DoxyCodeLine{187             \textcolor{keywordflow}{if} (e-\/>getSourceVertexCode()==v-\/>\mbox{\hyperlink{classvertex_a74467dba1d5db73efe1ffdea2ebdef39}{getCode}}())\{}
+\DoxyCodeLine{188                 result.push\_back(e);}
+\DoxyCodeLine{189             \}}
+\DoxyCodeLine{190         \}}
+\DoxyCodeLine{191         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{192     \}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194     std::vector<vertex*> getVertexSet()\{\textcolor{keywordflow}{return} vertexSet;\}}
+\DoxyCodeLine{195     std::vector<edge*> getEdgeSet()\{\textcolor{keywordflow}{return} edgeSet;\}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \textcolor{comment}{//for Edmonds Karp Algorithm}}
+\DoxyCodeLine{198     \textcolor{keywordtype}{void} testVisit(std::queue<vertex*> \&q, \mbox{\hyperlink{classedge}{edge}} *e, \mbox{\hyperlink{classvertex}{vertex}} *w, \textcolor{keywordtype}{double} residual);}
+\DoxyCodeLine{199     \textcolor{keywordtype}{bool} findAugmentingPath(\mbox{\hyperlink{classgraph}{graph}} *g, \mbox{\hyperlink{classvertex}{vertex}} *s, \mbox{\hyperlink{classvertex}{vertex}} *t);}
+\DoxyCodeLine{200     \textcolor{keywordtype}{double} findminResidAlongPath(\mbox{\hyperlink{classvertex}{vertex}} *s, \mbox{\hyperlink{classvertex}{vertex}} *t);}
+\DoxyCodeLine{201     \textcolor{keywordtype}{void} augmentFlowAlongPath(\mbox{\hyperlink{classvertex}{vertex}} *s, \mbox{\hyperlink{classvertex}{vertex}} *t, \textcolor{keywordtype}{double} f);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{208     \textcolor{keywordtype}{void} \mbox{\hyperlink{classgraph_af3fe21db35da3c1c5b500a2553c78f54}{edmondskarp}}(\mbox{\hyperlink{classgraph}{graph}} *g);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{217     \textcolor{keywordtype}{double} \mbox{\hyperlink{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}{vertexMaxFlow}}(\mbox{\hyperlink{classgraph}{graph}} *g, std::string target)\{}
+\DoxyCodeLine{218         \mbox{\hyperlink{classgraph_af3fe21db35da3c1c5b500a2553c78f54}{edmondskarp}}(g);}
+\DoxyCodeLine{219         \mbox{\hyperlink{classvertex}{vertex}}* t= \mbox{\hyperlink{classgraph_ab4e0c89e0137fe7685ea066194ff27b0}{findVertex}}(target);}
+\DoxyCodeLine{220         \textcolor{keywordtype}{double} sum=0;}
+\DoxyCodeLine{221         \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} e: \mbox{\hyperlink{classgraph_a02e0059a033da42c25b044e7f841820e}{getOutgoingEdges}}(g, \mbox{\hyperlink{classgraph_ab4e0c89e0137fe7685ea066194ff27b0}{findVertex}}(target)))\{}
+\DoxyCodeLine{222             \textcolor{keywordflow}{if} (e-\/>getTargetVertexCode()==\textcolor{stringliteral}{"{}SINK"{}}) \{}
+\DoxyCodeLine{223                 sum += e-\/>getFlow();}
+\DoxyCodeLine{224             \}}
+\DoxyCodeLine{225         \}}
+\DoxyCodeLine{226         \textcolor{keywordflow}{return} sum;}
+\DoxyCodeLine{227     \}}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{235     \textcolor{keywordtype}{double} \mbox{\hyperlink{classgraph_ada0828544f06e93074c490b1079610a5}{TotalFlow}}(\mbox{\hyperlink{classgraph}{graph}} *g)\{}
+\DoxyCodeLine{236         \textcolor{keywordtype}{double} sum=0;}
+\DoxyCodeLine{237         \mbox{\hyperlink{class_data}{Data}} data1;}
+\DoxyCodeLine{238         vector<cities> Cidades = data1.\mbox{\hyperlink{class_data_a85eb663823d1aa9a78c10c9960840078}{getCities}}();}
+\DoxyCodeLine{239         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} c:Cidades)\{}
+\DoxyCodeLine{240             sum+= \mbox{\hyperlink{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}{vertexMaxFlow}}(g, c.getCode());}
+\DoxyCodeLine{241         \}}
+\DoxyCodeLine{242         \textcolor{keywordflow}{return} sum;}
+\DoxyCodeLine{243     \}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245     \textcolor{keywordtype}{void} vertexRemovalFailures(\mbox{\hyperlink{classgraph}{graph}}* g1, std::string PScode)\{}
+\DoxyCodeLine{246         vector<pair<std::string, double>> initial;}
+\DoxyCodeLine{247         vector<pair<std::string, double>> \textcolor{keyword}{final};}
+\DoxyCodeLine{248         \mbox{\hyperlink{class_data}{Data}} data1;}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} c: data1.\mbox{\hyperlink{class_data_a85eb663823d1aa9a78c10c9960840078}{getCities}}())\{}
+\DoxyCodeLine{251             initial.push\_back(make\_pair(c.getCode(), \mbox{\hyperlink{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}{vertexMaxFlow}}(g1, c.getCode())));}
+\DoxyCodeLine{252         \}}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254         vector<edge*> abc;}
+\DoxyCodeLine{255         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} e: g1-\/>getEdgeSet())\{}
+\DoxyCodeLine{256             \textcolor{keywordflow}{if} (e-\/>getSourceVertexCode()==PScode)\{}
+\DoxyCodeLine{257                 e-\/>setCapacity(0);}
+\DoxyCodeLine{258             \}}
+\DoxyCodeLine{259             abc.push\_back(e);}
+\DoxyCodeLine{260         \}}
+\DoxyCodeLine{261         g1-\/>setEdgeSet(abc);}
+\DoxyCodeLine{262         \mbox{\hyperlink{classgraph_af3fe21db35da3c1c5b500a2553c78f54}{edmondskarp}}(g1);}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} c: data1.\mbox{\hyperlink{class_data_a85eb663823d1aa9a78c10c9960840078}{getCities}}())\{}
+\DoxyCodeLine{265             \textcolor{keyword}{final}.push\_back(make\_pair(c.getCode(), \mbox{\hyperlink{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}{vertexMaxFlow}}(g1, c.getCode())));}
+\DoxyCodeLine{266         \}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<initial.size(); i++)\{}
+\DoxyCodeLine{269             \textcolor{keywordflow}{if} (initial[i].second!=\textcolor{keyword}{final}[i].second)\{}
+\DoxyCodeLine{270                 std::cout << initial[i].first << \textcolor{stringliteral}{"{}  |   "{}} << initial[i].second << \textcolor{stringliteral}{"{}  |   "{}} << \textcolor{keyword}{final}[i].second << std::endl;}
+\DoxyCodeLine{271             \}}
+\DoxyCodeLine{272         \}}
+\DoxyCodeLine{273         \textcolor{comment}{//graph* g2=new graph;}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275         vector<edge*> temp;}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} r: data1.\mbox{\hyperlink{class_data_ad7470061e9cee84feb49d96bc2c16946}{getReservoirs}}())\{}
+\DoxyCodeLine{278             \mbox{\hyperlink{classedge}{edge}}* e= \textcolor{keyword}{new} \mbox{\hyperlink{classedge}{edge}}(\textcolor{stringliteral}{"{}SOURCE"{}}, r.getCode(), r.getMaxDel());}
+\DoxyCodeLine{279             temp.push\_back(e);}
+\DoxyCodeLine{280         \}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} c:data1.\mbox{\hyperlink{class_data_a85eb663823d1aa9a78c10c9960840078}{getCities}}())\{}
+\DoxyCodeLine{283             \mbox{\hyperlink{classedge}{edge}}* e= \textcolor{keyword}{new} \mbox{\hyperlink{classedge}{edge}}(c.getCode(), \textcolor{stringliteral}{"{}SINK"{}}, c.getDemand());}
+\DoxyCodeLine{284             temp.push\_back(e);}
+\DoxyCodeLine{285         \}}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287         \textcolor{comment}{//Edges}}
+\DoxyCodeLine{288         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} p:data1.\mbox{\hyperlink{class_data_a3d116b5b038bafe8f12badb193121978}{getPipes}}()) \{}
+\DoxyCodeLine{289             \mbox{\hyperlink{classedge}{edge}}* e = \textcolor{keyword}{new} \mbox{\hyperlink{classedge}{edge}}(p.getSpA(), p.getSpB(), p.getCapacity());}
+\DoxyCodeLine{290             temp.push\_back(e);}
+\DoxyCodeLine{291             \textcolor{keywordflow}{if} (p.getDirection() == 0) \{}
+\DoxyCodeLine{292                 \mbox{\hyperlink{classedge}{edge}}* e2 = \textcolor{keyword}{new} \mbox{\hyperlink{classedge}{edge}}(p.getSpB(), p.getSpA(), p.getCapacity());}
+\DoxyCodeLine{293                 temp.push\_back(e2);}
+\DoxyCodeLine{294             \}}
+\DoxyCodeLine{295         \}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297         g1-\/>setEdgeSet(temp);}
+\DoxyCodeLine{298         \mbox{\hyperlink{classgraph_af3fe21db35da3c1c5b500a2553c78f54}{edmondskarp}}(g1);}
+\DoxyCodeLine{299         cout << \mbox{\hyperlink{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}{vertexMaxFlow}}(g1, \textcolor{stringliteral}{"{}C\_1"{}});}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301     \}}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303     \textcolor{keywordtype}{void} pipelineRemovalFailures()\{\}}
+\DoxyCodeLine{304 \};}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//DA\_PROJECT1\_GRAPH\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,59 @@
+\hypertarget{_data_8h_source}{}\doxysection{Data.\+h}
+\label{_data_8h_source}\index{C:/Users/LENOVO/OneDrive/Ambiente de Trabalho/FEUP/23-\/24/DA/Projeto 1/src/.h/Data.h@{C:/Users/LENOVO/OneDrive/Ambiente de Trabalho/FEUP/23-\/24/DA/Projeto 1/src/.h/Data.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DA\_PROJECT1\_DATA\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DA\_PROJECT1\_DATA\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}cities.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}pipes.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}reservoirs.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}stations.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_data}{Data}} \{}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     vector<cities> Cities;}
+\DoxyCodeLine{15     vector<pipes> Pipes;}
+\DoxyCodeLine{16     vector<reservoirs> Reservoirs;}
+\DoxyCodeLine{17     vector<stations> Stations;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{comment}{//Adders}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} addCity(\mbox{\hyperlink{classcities}{cities}} acity);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} addPipes(\mbox{\hyperlink{classpipes}{pipes}} apipe);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} addReservoirs(\mbox{\hyperlink{classreservoirs}{reservoirs}} areservoir);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} addStations(\mbox{\hyperlink{classstations}{stations}} astation);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{public}:}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{comment}{//Constructor}}
+\DoxyCodeLine{48     \mbox{\hyperlink{class_data}{Data}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{comment}{//Getters}}
+\DoxyCodeLine{55 \textcolor{comment}{}    vector<cities> \mbox{\hyperlink{class_data_a85eb663823d1aa9a78c10c9960840078}{getCities}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{60     vector<pipes> \mbox{\hyperlink{class_data_a3d116b5b038bafe8f12badb193121978}{getPipes}}();}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{65     vector<reservoirs> \mbox{\hyperlink{class_data_ad7470061e9cee84feb49d96bc2c16946}{getReservoirs}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{70     vector<stations> \mbox{\hyperlink{class_data_aab11b2faa8240fc7f6030d95ece399a8}{getStations}}();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{//Readers}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} readCities();}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} readPipes();}
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} readReservoirs();}
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} readStations();}
+\DoxyCodeLine{78 \};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//DA\_PROJECT1\_DATA\_H}}
+
+\end{DoxyCode}

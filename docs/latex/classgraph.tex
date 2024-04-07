@@ -1,0 +1,150 @@
+\hypertarget{classgraph}{}\doxysection{graph Class Reference}
+\label{classgraph}\index{graph@{graph}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgraph_aa9a7b9fb29bebfecf95d76503138a28f}\label{classgraph_aa9a7b9fb29bebfecf95d76503138a28f}} 
+void {\bfseries set\+Edge\+Set} (std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ es)
+\item 
+\mbox{\Hypertarget{classgraph_a6b4c8aba577a84dd7da7596e6f588987}\label{classgraph_a6b4c8aba577a84dd7da7596e6f588987}} 
+void {\bfseries add\+Edge} (std\+::string source, std\+::string target, double capacity, bool direction)
+\item 
+\mbox{\Hypertarget{classgraph_a6a3525a98befe87925fbbf53d86b30c1}\label{classgraph_a6a3525a98befe87925fbbf53d86b30c1}} 
+bool {\bfseries remove\+Edge} (\mbox{\hyperlink{classedge}{edge}} e)
+\item 
+\mbox{\hyperlink{classvertex}{vertex}} $\ast$ \mbox{\hyperlink{classgraph_ab4e0c89e0137fe7685ea066194ff27b0}{find\+Vertex}} (std\+::string c) const
+\begin{DoxyCompactList}\small\item\em Useful for searching for a specific vertex in a graph using its code as a unique identifier. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgraph_a690a3784ba3045abefb0e5c4da179d2e}\label{classgraph_a690a3784ba3045abefb0e5c4da179d2e}} 
+std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ {\bfseries get\+Incoming\+Edges} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g, \mbox{\hyperlink{classvertex}{vertex}} $\ast$v)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ \mbox{\hyperlink{classgraph_a02e0059a033da42c25b044e7f841820e}{get\+Outgoing\+Edges}} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g, \mbox{\hyperlink{classvertex}{vertex}} $\ast$v)
+\begin{DoxyCompactList}\small\item\em useful for obtaining all outgoing edges of a specific vertex in a graph facilitating the analysis of the vertex\textquotesingle{}s connectivity with other vertices \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgraph_a523e92859a6b4d7944c70db7782bcef1}\label{classgraph_a523e92859a6b4d7944c70db7782bcef1}} 
+std\+::vector$<$ \mbox{\hyperlink{classvertex}{vertex}} $\ast$ $>$ {\bfseries get\+Vertex\+Set} ()
+\item 
+\mbox{\Hypertarget{classgraph_a6b1164ec43704c9e3904e9dd1d74f202}\label{classgraph_a6b1164ec43704c9e3904e9dd1d74f202}} 
+std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ {\bfseries get\+Edge\+Set} ()
+\item 
+\mbox{\Hypertarget{classgraph_ae45a23edecef74773c3ed53cadcfa40f}\label{classgraph_ae45a23edecef74773c3ed53cadcfa40f}} 
+void {\bfseries test\+Visit} (std\+::queue$<$ \mbox{\hyperlink{classvertex}{vertex}} $\ast$ $>$ \&q, \mbox{\hyperlink{classedge}{edge}} $\ast$e, \mbox{\hyperlink{classvertex}{vertex}} $\ast$w, double residual)
+\item 
+\mbox{\Hypertarget{classgraph_af4fca38911cc7e07ca3d7c94740ee664}\label{classgraph_af4fca38911cc7e07ca3d7c94740ee664}} 
+bool {\bfseries find\+Augmenting\+Path} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g, \mbox{\hyperlink{classvertex}{vertex}} $\ast$s, \mbox{\hyperlink{classvertex}{vertex}} $\ast$t)
+\item 
+\mbox{\Hypertarget{classgraph_a15416ea24d17a95da18ea1838384ccdc}\label{classgraph_a15416ea24d17a95da18ea1838384ccdc}} 
+double {\bfseries findmin\+Resid\+Along\+Path} (\mbox{\hyperlink{classvertex}{vertex}} $\ast$s, \mbox{\hyperlink{classvertex}{vertex}} $\ast$t)
+\item 
+\mbox{\Hypertarget{classgraph_a05ba8c5809a5291417d399f5ec9130ae}\label{classgraph_a05ba8c5809a5291417d399f5ec9130ae}} 
+void {\bfseries augment\+Flow\+Along\+Path} (\mbox{\hyperlink{classvertex}{vertex}} $\ast$s, \mbox{\hyperlink{classvertex}{vertex}} $\ast$t, double f)
+\item 
+void \mbox{\hyperlink{classgraph_af3fe21db35da3c1c5b500a2553c78f54}{edmondskarp}} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Implements the Edmonds-\/\+Karp algorithm to find the maximum flow in a flow network, updating the edge flows until there are no more increasing paths in the graph. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}{vertex\+Max\+Flow}} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g, std\+::string target)
+\begin{DoxyCompactList}\small\item\em Uses the Edmonds-\/\+Karp algorithm to calculate the maximum flow int the flow network and then calculates the maximum flow flowing to the specified vertex. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classgraph_ada0828544f06e93074c490b1079610a5}{Total\+Flow}} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Uses the \mbox{\hyperlink{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}{vertex\+Max\+Flow()}} to calculate the maximum flow in each city and then calculates the total flow in all cities by adding que maximum flows in each city. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgraph_a6d8fabfb5af96f96d9dcfaea2cf515c1}\label{classgraph_a6d8fabfb5af96f96d9dcfaea2cf515c1}} 
+void {\bfseries vertex\+Removal\+Failures} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g1, std\+::string PScode)
+\item 
+\mbox{\Hypertarget{classgraph_a3e17b3065696230ce9c59d71736101a4}\label{classgraph_a3e17b3065696230ce9c59d71736101a4}} 
+void {\bfseries pipeline\+Removal\+Failures} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgraph_af3fe21db35da3c1c5b500a2553c78f54}\label{classgraph_af3fe21db35da3c1c5b500a2553c78f54}} 
+\index{graph@{graph}!edmondskarp@{edmondskarp}}
+\index{edmondskarp@{edmondskarp}!graph@{graph}}
+\doxysubsubsection{\texorpdfstring{edmondskarp()}{edmondskarp()}}
+{\footnotesize\ttfamily void graph\+::edmondskarp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgraph}{graph}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+Implements the Edmonds-\/\+Karp algorithm to find the maximum flow in a flow network, updating the edge flows until there are no more increasing paths in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classgraph_ab4e0c89e0137fe7685ea066194ff27b0}\label{classgraph_ab4e0c89e0137fe7685ea066194ff27b0}} 
+\index{graph@{graph}!findVertex@{findVertex}}
+\index{findVertex@{findVertex}!graph@{graph}}
+\doxysubsubsection{\texorpdfstring{findVertex()}{findVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classvertex}{vertex}} $\ast$ graph\+::find\+Vertex (\begin{DoxyParamCaption}\item[{std\+::string}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Useful for searching for a specific vertex in a graph using its code as a unique identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nullptr if no vertices are found after traversing the entire set of vertices 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgraph_a02e0059a033da42c25b044e7f841820e}\label{classgraph_a02e0059a033da42c25b044e7f841820e}} 
+\index{graph@{graph}!getOutgoingEdges@{getOutgoingEdges}}
+\index{getOutgoingEdges@{getOutgoingEdges}!graph@{graph}}
+\doxysubsubsection{\texorpdfstring{getOutgoingEdges()}{getOutgoingEdges()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ graph\+::get\+Outgoing\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgraph}{graph}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{classvertex}{vertex}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+useful for obtaining all outgoing edges of a specific vertex in a graph facilitating the analysis of the vertex\textquotesingle{}s connectivity with other vertices 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \\
+\hline
+{\em v} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result that contains pointers to all edges leaving vertex v 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgraph_ada0828544f06e93074c490b1079610a5}\label{classgraph_ada0828544f06e93074c490b1079610a5}} 
+\index{graph@{graph}!TotalFlow@{TotalFlow}}
+\index{TotalFlow@{TotalFlow}!graph@{graph}}
+\doxysubsubsection{\texorpdfstring{TotalFlow()}{TotalFlow()}}
+{\footnotesize\ttfamily double graph\+::\+Total\+Flow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgraph}{graph}} $\ast$}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Uses the \mbox{\hyperlink{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}{vertex\+Max\+Flow()}} to calculate the maximum flow in each city and then calculates the total flow in all cities by adding que maximum flows in each city. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sum that represents the total flow across all cities 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}\label{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}} 
+\index{graph@{graph}!vertexMaxFlow@{vertexMaxFlow}}
+\index{vertexMaxFlow@{vertexMaxFlow}!graph@{graph}}
+\doxysubsubsection{\texorpdfstring{vertexMaxFlow()}{vertexMaxFlow()}}
+{\footnotesize\ttfamily double graph\+::vertex\+Max\+Flow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgraph}{graph}} $\ast$}]{g,  }\item[{std\+::string}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Uses the Edmonds-\/\+Karp algorithm to calculate the maximum flow int the flow network and then calculates the maximum flow flowing to the specified vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \\
+\hline
+{\em target} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sum that represents the maximum flow flowing to the specified destination vertex 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+LENOVO/\+One\+Drive/\+Ambiente de Trabalho/\+FEUP/23-\/24/\+DA/\+Projeto 1/src/.\+h/graph.\+h\end{DoxyCompactItemize}
