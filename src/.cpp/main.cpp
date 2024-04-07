@@ -85,10 +85,7 @@ int main() {
             }
 
             case 5: {
-                vector<pair<std::string, std::string>> pipes;
-                string choice;
-                string source;
-                string dest;
+                pair<std::string, std::string> remPipes;
 
                 int line = 0;
                 for(auto v : data1.getPipes()) {
@@ -96,19 +93,13 @@ int main() {
                     line++;
                 }
 
-                do {
-                    cout << "Enter a valid source node: ";
-                    cin >> source;
-                    cout << "Enter the respective dest node: ";
-                    cin >> dest;
+                std::cout << "Type a pipe's source and destination to be removed: ";
+                std::cin >> remPipes.first;
 
-                    pipes.emplace_back(source,dest);
+                std::cout << "Type another pipe's source and destination to be removed: ";
+                std::cin >> remPipes.second;
 
-                    cout << "Do you want to remove more pipes? (y/n): ";
-                    cin >> choice;
-                } while (choice == "y" || choice == "Y");
-
-                g1->pipelineRemovalFailures(g1,pipes);
+                g1->pipelineRemovalFailures(g1,remPipes);
             }
 
             case 6: {
