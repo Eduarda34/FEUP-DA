@@ -3,9 +3,8 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classgraph_aa9a7b9fb29bebfecf95d76503138a28f}\label{classgraph_aa9a7b9fb29bebfecf95d76503138a28f}} 
-void {\bfseries set\+Edge\+Set} (std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ es)
-\item 
+void \mbox{\hyperlink{classgraph_aa9a7b9fb29bebfecf95d76503138a28f}{set\+Edge\+Set}} (std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ es)
+\begin{DoxyCompactList}\small\item\em sets the set of edges associated with this object to the given new set of edges \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classgraph_a6b4c8aba577a84dd7da7596e6f588987}\label{classgraph_a6b4c8aba577a84dd7da7596e6f588987}} 
 void {\bfseries add\+Edge} (std\+::string source, std\+::string target, double capacity, bool direction)
 \item 
@@ -14,16 +13,14 @@ bool {\bfseries remove\+Edge} (\mbox{\hyperlink{classedge}{edge}} e)
 \item 
 \mbox{\hyperlink{classvertex}{vertex}} $\ast$ \mbox{\hyperlink{classgraph_ab4e0c89e0137fe7685ea066194ff27b0}{find\+Vertex}} (std\+::string c) const
 \begin{DoxyCompactList}\small\item\em Useful for searching for a specific vertex in a graph using its code as a unique identifier. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classgraph_a690a3784ba3045abefb0e5c4da179d2e}\label{classgraph_a690a3784ba3045abefb0e5c4da179d2e}} 
-std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ {\bfseries get\+Incoming\+Edges} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g, \mbox{\hyperlink{classvertex}{vertex}} $\ast$v)
+std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ \mbox{\hyperlink{classgraph_a690a3784ba3045abefb0e5c4da179d2e}{get\+Incoming\+Edges}} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g, \mbox{\hyperlink{classvertex}{vertex}} $\ast$v)
 \item 
 std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ \mbox{\hyperlink{classgraph_a02e0059a033da42c25b044e7f841820e}{get\+Outgoing\+Edges}} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g, \mbox{\hyperlink{classvertex}{vertex}} $\ast$v)
 \begin{DoxyCompactList}\small\item\em useful for obtaining all outgoing edges of a specific vertex in a graph facilitating the analysis of the vertex\textquotesingle{}s connectivity with other vertices \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classgraph_a523e92859a6b4d7944c70db7782bcef1}\label{classgraph_a523e92859a6b4d7944c70db7782bcef1}} 
 std\+::vector$<$ \mbox{\hyperlink{classvertex}{vertex}} $\ast$ $>$ {\bfseries get\+Vertex\+Set} ()
 \item 
-\mbox{\Hypertarget{classgraph_a6b1164ec43704c9e3904e9dd1d74f202}\label{classgraph_a6b1164ec43704c9e3904e9dd1d74f202}} 
-std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ {\bfseries get\+Edge\+Set} ()
+std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ \mbox{\hyperlink{classgraph_a6b1164ec43704c9e3904e9dd1d74f202}{get\+Edge\+Set}} ()
 \item 
 \mbox{\Hypertarget{classgraph_ae45a23edecef74773c3ed53cadcfa40f}\label{classgraph_ae45a23edecef74773c3ed53cadcfa40f}} 
 void {\bfseries test\+Visit} (std\+::queue$<$ \mbox{\hyperlink{classvertex}{vertex}} $\ast$ $>$ \&q, \mbox{\hyperlink{classedge}{edge}} $\ast$e, \mbox{\hyperlink{classvertex}{vertex}} $\ast$w, double residual)
@@ -43,11 +40,17 @@ double \mbox{\hyperlink{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}{vertex\+Ma
 \begin{DoxyCompactList}\small\item\em Uses the Edmonds-\/\+Karp algorithm to calculate the maximum flow int the flow network and then calculates the maximum flow flowing to the specified vertex. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classgraph_ada0828544f06e93074c490b1079610a5}{Total\+Flow}} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g)
 \begin{DoxyCompactList}\small\item\em Uses the \mbox{\hyperlink{classgraph_a56c3b00d5d5e5ff5d84dfd34cfdb42a5}{vertex\+Max\+Flow()}} to calculate the maximum flow in each city and then calculates the total flow in all cities by adding que maximum flows in each city. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgraph_a0c345cce458fe26d7ea88d5f2033451f}\label{classgraph_a0c345cce458fe26d7ea88d5f2033451f}} 
+void {\bfseries metrics\+Analysis} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g)
+\item 
+\mbox{\Hypertarget{classgraph_ad8925c33d36c37e4476cdd1e39e2c761}\label{classgraph_ad8925c33d36c37e4476cdd1e39e2c761}} 
+void {\bfseries Demandvs\+Flow} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g)
+\item 
 \mbox{\Hypertarget{classgraph_a6d8fabfb5af96f96d9dcfaea2cf515c1}\label{classgraph_a6d8fabfb5af96f96d9dcfaea2cf515c1}} 
 void {\bfseries vertex\+Removal\+Failures} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g1, std\+::string PScode)
 \item 
-\mbox{\Hypertarget{classgraph_a3e17b3065696230ce9c59d71736101a4}\label{classgraph_a3e17b3065696230ce9c59d71736101a4}} 
-void {\bfseries pipeline\+Removal\+Failures} ()
+\mbox{\Hypertarget{classgraph_ae8f8d76880b5a5a4713da99101ec99a4}\label{classgraph_ae8f8d76880b5a5a4713da99101ec99a4}} 
+void {\bfseries pipeline\+Removal\+Failures} (\mbox{\hyperlink{classgraph}{graph}} $\ast$g1, pair$<$ std\+::string, std\+::string $>$ pipelinestoremove)
 \end{DoxyCompactItemize}
 
 
@@ -85,6 +88,31 @@ Useful for searching for a specific vertex in a graph using its code as a unique
 \begin{DoxyReturn}{Returns}
 nullptr if no vertices are found after traversing the entire set of vertices 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classgraph_a6b1164ec43704c9e3904e9dd1d74f202}\label{classgraph_a6b1164ec43704c9e3904e9dd1d74f202}} 
+\index{graph@{graph}!getEdgeSet@{getEdgeSet}}
+\index{getEdgeSet@{getEdgeSet}!graph@{graph}}
+\doxysubsubsection{\texorpdfstring{getEdgeSet()}{getEdgeSet()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ graph\+::get\+Edge\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+vector of pointers to all edges of this graph 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgraph_a690a3784ba3045abefb0e5c4da179d2e}\label{classgraph_a690a3784ba3045abefb0e5c4da179d2e}} 
+\index{graph@{graph}!getIncomingEdges@{getIncomingEdges}}
+\index{getIncomingEdges@{getIncomingEdges}!graph@{graph}}
+\doxysubsubsection{\texorpdfstring{getIncomingEdges()}{getIncomingEdges()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$ graph\+::get\+Incoming\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgraph}{graph}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{classvertex}{vertex}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \\
+\hline
+{\em v} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of pointers to all edges that are directed to vertex \textquotesingle{}v\textquotesingle{} in this graph 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classgraph_a02e0059a033da42c25b044e7f841820e}\label{classgraph_a02e0059a033da42c25b044e7f841820e}} 
 \index{graph@{graph}!getOutgoingEdges@{getOutgoingEdges}}
 \index{getOutgoingEdges@{getOutgoingEdges}!graph@{graph}}
@@ -105,6 +133,21 @@ useful for obtaining all outgoing edges of a specific vertex in a graph facilita
 \begin{DoxyReturn}{Returns}
 result that contains pointers to all edges leaving vertex v 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classgraph_aa9a7b9fb29bebfecf95d76503138a28f}\label{classgraph_aa9a7b9fb29bebfecf95d76503138a28f}} 
+\index{graph@{graph}!setEdgeSet@{setEdgeSet}}
+\index{setEdgeSet@{setEdgeSet}!graph@{graph}}
+\doxysubsubsection{\texorpdfstring{setEdgeSet()}{setEdgeSet()}}
+{\footnotesize\ttfamily void graph\+::set\+Edge\+Set (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classedge}{edge}} $\ast$ $>$}]{es }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+sets the set of edges associated with this object to the given new set of edges 
+
+
+\begin{DoxyParams}{Parameters}
+{\em es} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classgraph_ada0828544f06e93074c490b1079610a5}\label{classgraph_ada0828544f06e93074c490b1079610a5}} 
 \index{graph@{graph}!TotalFlow@{TotalFlow}}
 \index{TotalFlow@{TotalFlow}!graph@{graph}}

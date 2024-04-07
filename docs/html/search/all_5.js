@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['menu_0',['Menu',['../class_menu.html',1,'']]]
+  ['pipes_0',['pipes',['../classpipes.html',1,'pipes'],['../classpipes.html#ae7a7a6669ee8861e892e4ac888306223',1,'pipes::pipes()']]]
 ];
